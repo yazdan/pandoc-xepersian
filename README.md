@@ -12,11 +12,12 @@ In order to convert persin Markdown to xepersian and applying this filter you mu
 
 Please make sure that the filter file is executable.
 
+[pandoc]= http://pandoc.org/
+
 ## Known bugs
 
 It seems that in Windows OS filter usage resutls in encoding problems and it seems to be windows cmd and powershell's bug.
 
-[pandoc]= http://pandoc.org/
 
 ## Getting Help
 
