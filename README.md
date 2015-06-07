@@ -4,6 +4,8 @@
 
 This is just a latex filter
 
+[pandoc]= http://pandoc.org/
+
 ## Usage
 
 In order to convert persin Markdown to xepersian and applying this filter you must copy pandoc-xepersian.py into current directory, following command should be used:
@@ -12,7 +14,6 @@ In order to convert persin Markdown to xepersian and applying this filter you mu
 
 Please make sure that the filter file is executable.
 
-[pandoc]= http://pandoc.org/
 
 ## Known bugs
 
