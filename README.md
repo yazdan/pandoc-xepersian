@@ -4,7 +4,7 @@
 
 This is just a latex filter
 
-[pandoc]= http://pandoc.org/
+[pandoc]: http://pandoc.org/
 
 ## Usage
 
@@ -24,4 +24,4 @@ It seems that in Windows OS filter usage resutls in encoding problems and it see
 
 If you have any difficulties with pandoc-eqnos, please feel welcome to [file an issue] on github so that we can help.
 
-
+[file an issue]: https://github.com/yazdan/pandoc-xepersian/issues
