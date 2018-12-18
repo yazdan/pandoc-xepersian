@@ -11,32 +11,35 @@ import os
 
 log = logging.getLogger(os.path.basename(__file__))
 
+ignored_words = ['a4paper']
+
 def configure_logging():
-	format_string = "%(name)s: [%(levelname)s] %(message)s"
-	logging.basicConfig(format=format_string, level=logging.DEBUG)
-	#log.debug("Debug logging enabled.")
+    format_string = "%(name)s: [%(levelname)s] %(message)s"
+    logging.basicConfig(format=format_string, level=logging.DEBUG)
+    #log.debug("Debug logging enabled.")
 
 def IsNumber(x):
      import re
      if re.match("^\d*.?\d*$", x) == None:
          return False
      return True
-	
+    
 def behead(key, value, format, meta):
 
-	if format == 'latex':
-		if key == 'Str':
-			try:
-				# if there is no exception this is english text
-				value.encode('ascii')
-				# Just change non numeric values
-				if not IsNumber(value):
-					return RawInline('latex', '\\lr{'+value+'}')
-			except UnicodeEncodeError:
-				#log.info( "string is UTF-8")
-				pass
-	
+    if format == 'latex':
+        if key == 'Str':
+            try:
+                # if there is no exception this is english text
+                value.encode('ascii')
+                # Just change non numeric values
+                if not IsNumber(value):
+                    if value not in ignored_words:
+                        return RawInline('latex', '\\lr{'+value+'}')
+            except UnicodeEncodeError:
+                #log.info( "string is UTF-8")
+                pass
+    
 
 if __name__ == "__main__":
-	configure_logging()
-	toJSONFilter(behead)
+    configure_logging()
+    toJSONFilter(behead)
